@@ -25,7 +25,7 @@ public class CucumberHooks {
 
         Configuration.baseUrl = ConfigLoader.getInstance().getBaseUrl();
         Configuration.browser = "chrome";
-        Configuration.headless = true;
+        Configuration.headless = false;
         Configuration.holdBrowserOpen = false;
         Configuration.pageLoadStrategy = "normal";
         Configuration.screenshots = true;

@@ -1,27 +1,26 @@
 package cucumber.stepDefs;
 
 import com.codeborne.selenide.Condition;
-import cucumber.pages.DefaultPage;
+import cucumber.dataModel.UserDataReader;
+import cucumber.pages.AccountPage;
+import cucumber.pages.TopBarMenu;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.*;
 
 public class DefaultStep {
-    DefaultPage defaultPage = page(DefaultPage.class);
+    private UserDataReader userDataReader;
 
-    @Then("I am in default Page in SwagLabs")
-    public void iAmInDefaultPageInSwagLabs() {
-        defaultPage.applogoDiv.shouldHave(Condition.appear);
+    TopBarMenu topBarMenu = page(TopBarMenu.class);
+
+    @Then("I can see TopBar of AskOmDch")
+    public void iAmInDefaultPageInAskOmDch() {
+        topBarMenu.topLink.shouldHave(Condition.appear);
     }
-
-    @When("I add {string} into my cart")
-    public void iAddIntoMyCart(String arg0) {
-        defaultPage.inventoryitemDiv1.click();
-    }
-
-    @When("I click on cart icon")
-    public void iClickOnCartIcon() {
-        defaultPage.shoppingcartIcon.click();
+    @When("I click store page button")
+    public void iClickStorePageButton(){
+        topBarMenu.storeLink.click();
     }
 }

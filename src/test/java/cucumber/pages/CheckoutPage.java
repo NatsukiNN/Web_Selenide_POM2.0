@@ -1,17 +1,21 @@
 package cucumber.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.ElementsCollection;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.*;
 
+// page_url = https://askomdch.com/checkout/
 public class CheckoutPage {
-    public SelenideElement applogoDiv = $x("//div[@class='app_logo']");
-    public SelenideElement titleSpan = $(byText("Checkout: Your Information"));
-    public SelenideElement firstNameInput = $x("//*[@id='first-name']");
-    public SelenideElement lastNameInput = $x("//*[@id='last-name']");
-    public SelenideElement postalCodeInput = $x("//*[@id='postal-code']");
-    public SelenideElement backimageImg = $x("//img[@alt='Go back']");
-    public SelenideElement continueInput = $x("//*[@id='continue']");
+    public SelenideElement directBankTransferRadioButton = $("#payment_method_bacs");
+
+    public SelenideElement cashOnDeliveryRadioButton = $("#payment_method_cod");
+
+    public SelenideElement placeOrderButton = $("#place_order");
+
+    
+
+
+    // No page elements added
 }
